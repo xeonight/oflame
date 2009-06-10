@@ -1,6 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :votes
-
   map.root_nominee '', :controller => 'nominees', :action => 'index', :conditions => { :subdomain => true}
 
   map.login 'login', :controller => "user_sessions", :action => "new"

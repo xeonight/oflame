@@ -17,9 +17,6 @@
     %strong Tags:
     - nominee.tag_counts_on(:tags).each do |tag|
       = link_to tag.name, root_path(:subdomain => tag)
-  %p
-    %strong Rank:
-    = nominee.rank
   %hr    
 
 %p

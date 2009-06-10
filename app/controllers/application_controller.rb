@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password
 
   helper_method :current_user
+  
+  def lame_rate
+    if (@nominee.rank_from(current_user)).nil
+    end
+  end
 
   private
 

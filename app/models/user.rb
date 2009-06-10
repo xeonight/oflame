@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
+  acts_as_tagger
   acts_as_authentic
-  has_many :votes, :through  => :nominees
 end

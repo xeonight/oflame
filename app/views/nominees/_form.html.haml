@@ -14,9 +14,26 @@
     = f.text_field :tag_list
   %p
     = f.file_field :image
-  %p
-    = f.label :rank
-    %br
-    = f.text_field :vote
+  / %p
+  /   = f.label :rating
+  /   %br
+  /   = f.radio_button(:rank_list, :flame)
+  /   = f.label :Flame
+  /   %br
+  /   = f.radio_button(:rank_list, :lame)
+  /   = f.label :Lame
+  / %p
+  /   = link_to current_user.tag(@nominee, :with => "flame", :on => :ranks)
+  /   |
+  /   = link_to current_user.tag(@nominee, :with => "lame", :on => :ranks)
   %p
     = f.submit "Submit"
+
+/  This is for my reference cuz i was having trouble understanding radio buttons for a while...
+/      Radio Buttons 
+/     form.radio_button(:attribute, tag_value, options) 
+/     Creates a radio button. Normally there will be multiple radio buttons for a 
+/     given attribute, each with a different tag value. The one whose tag value 
+/     matches the current value of the attribute will be selected when the buttons 
+/     are displayed. If the user selects a different radio button, the value of its tag 
+/     will be stored in the ﬁeld. 

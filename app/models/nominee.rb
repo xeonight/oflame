@@ -1,11 +1,7 @@
 class Nominee < ActiveRecord::Base
-  has_many :users
-  has_many :votes, :through  => :users
-  acts_as_taggable_on :tags
+  acts_as_taggable_on :tags, :ranks
   
-  has_attached_file :image, :styles => { :small => '128x128>' }
-
-  def rank
-    @nominee = votes.find_by_rank(:all)
-  end
+  has_attached_file :image, :styles => { :small => '96x96>',
+                                         :normal => '196x196>' }
+  validates_presence_of :image                                       
 end

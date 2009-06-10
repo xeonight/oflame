@@ -1,7 +1,7 @@
 - title "Nominee"
 
 %p
-  = image_tag @nominee.image.url(:small)
+  = image_tag @nominee.image.url(:normal)
 
 %p
   %strong Name:
@@ -18,3 +18,5 @@
   = link_to "Edit", edit_nominee_path(@nominee, :subdomain => false)
   |
   = link_to "View All", root_path(:subdomain => false)
+  |
+  = link_to "Back", :back

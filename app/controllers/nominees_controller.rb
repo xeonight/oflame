@@ -40,6 +40,5 @@ class NomineesController < ApplicationController
 
   def show
     @nominee = Nominee.find(params[:id])
-    @rank = @nominee.votes.rake
   end
 end
