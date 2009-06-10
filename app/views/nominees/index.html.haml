@@ -1,0 +1,31 @@
+- title "Nominees"
+
+%br 
+
+%ul
+- for nominee in @nominees
+  %p
+    = image_tag nominee.image.url(:small)
+
+  %p
+    %strong
+      = link_to nominee.name, nominee
+  %p
+    %strong Content:
+    = nominee.content
+  %p
+    %strong Tags:
+    - nominee.tag_counts_on(:tags).each do |tag|
+      = link_to tag.name, root_path(:subdomain => tag)
+  %p
+    %strong Rank:
+    = nominee.rank
+  %hr    
+
+%p
+  = link_to "New Nominee", new_nominee_path
+  |
+  = link_to "View All", root_path(:subdomain => false)
+
+- Nominee.tag_counts_on(:tags).each do |tag|
+  = link_to tag, root_path(:subdomain => tag)

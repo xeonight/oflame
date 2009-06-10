@@ -1,0 +1,20 @@
+- title "Nominee"
+
+%p
+  = image_tag @nominee.image.url(:small)
+
+%p
+  %strong Name:
+  =h @nominee.name
+%p
+  %strong Content:
+  =h @nominee.content
+%p
+  %strong Tags:
+  - @nominee.tag_counts_on(:tags).each do |tag|
+    = link_to tag.name, root_path(:subdomain => tag)
+
+%p
+  = link_to "Edit", edit_nominee_path(@nominee, :subdomain => false)
+  |
+  = link_to "View All", root_path(:subdomain => false)

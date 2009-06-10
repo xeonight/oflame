@@ -1,0 +1,16 @@
+- title "Votes"
+
+%table
+  %tr
+    %th Nominee
+    %th User
+    %th Rank
+  - for vote in @votes
+    %tr
+      %td= h vote.nominee_id.name
+      %td= h vote.user_id.name
+      %td= h vote.rank
+      %td= link_to 'Show', vote
+      %td= link_to 'Edit', edit_vote_path(vote)
+
+%p= link_to "New Vote", new_vote_path
