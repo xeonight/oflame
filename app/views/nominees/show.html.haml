@@ -13,6 +13,9 @@
   %strong Tags:
   - @nominee.tag_counts_on(:tags).each do |tag|
     = link_to tag.name, root_path(:subdomain => tag)
+  %p
+    %strong Rank:
+    = @nominee.oflame_rank
 
 %p
   = link_to "Edit", edit_nominee_path(@nominee, :subdomain => false)

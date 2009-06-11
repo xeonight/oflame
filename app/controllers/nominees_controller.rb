@@ -5,9 +5,7 @@ class NomineesController < ApplicationController
     else
       @nominees = Nominee.all
     end
-    def rank
-      @nominee = Nominee.votes.find_all_by(:rank)
-    end
+    
   end
 
   def new

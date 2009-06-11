@@ -20,6 +20,9 @@ class ActsAsTaggableOnMigration < ActiveRecord::Migration
     
     add_index :taggings, :tag_id
     add_index :taggings, [:taggable_id, :taggable_type, :context]
+    
+    Tag.create(:name => 'flame')
+    Tag.create(:name => 'lame')
   end
   
   def self.down

@@ -14,6 +14,12 @@
     = f.text_field :tag_list
   %p
     = f.file_field :image
+  %p
+    = link_to current_user.tag(@nominee, :with => 'flame', :on => :ranks)
+    |
+    = link_to current_user.tag(@nominee, :with => 'lame', :on => :ranks)  
+    
+    
   / %p
   /   = f.label :rating
   /   %br
@@ -23,9 +29,9 @@
   /   = f.radio_button(:rank_list, :lame)
   /   = f.label :Lame
   / %p
-  /   = link_to current_user.tag(@nominee, :with => "flame", :on => :ranks)
+  /   = link_to @current_user.tag(@nominee, :with => "flame", :on => :ranks)
   /   |
-  /   = link_to current_user.tag(@nominee, :with => "lame", :on => :ranks)
+  /   = link_to @current_user.tag(@nominee, :with => "lame", :on => :ranks)
   %p
     = f.submit "Submit"
 

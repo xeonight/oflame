@@ -8,7 +8,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :persistence_token
       t.timestamps
     end
+    
     User.create(:username => 'test', :email => 't@t.com', :password => 'test', :password_confirmation => 'test')
+    User.create(:username => 'xeo', :email => 'x@x.com', :password => 'test', :password_confirmation => 'test')
   end
 
   def self.down
