@@ -15,7 +15,13 @@
     = link_to tag.name, root_path(:subdomain => tag)
   %p
     %strong Rank:
-    = @nominee.oflame_rank
+    = @nominee.votes_count
+  %p      
+    = @nominee.votes_for
+    Flames
+  %p  
+    = @nominee.votes_against
+    Lames
 
 %p
   = link_to "Edit", edit_nominee_path(@nominee, :subdomain => false)

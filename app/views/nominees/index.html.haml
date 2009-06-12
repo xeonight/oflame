@@ -19,7 +19,11 @@
       = link_to tag.name, root_path(:subdomain => tag)
   %p
     %strong Rank:
-    = nominee.oflame_rank
+    = nominee.votes_count
+    %strong For:
+    = nominee.votes_for
+    %strong Against:
+    = nominee.votes_against
   %hr    
 
 %p
