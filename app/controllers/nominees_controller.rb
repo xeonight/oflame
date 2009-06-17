@@ -39,4 +39,6 @@ class NomineesController < ApplicationController
   def show
     @nominee = Nominee.find(params[:id])
   end
+  
+
 end

@@ -15,18 +15,7 @@
   %p
     = f.file_field :image
   %p
-    - unless current_user.voted_for?(@nominee) == true
-      = f.radio_button :vote_for, :true
-      Flame
-      %p
-      = f.radio_button :vote_against, :false
-      Lame
-    - else
-      You have already voted for this Nominee
-    %p
-      Your Vote:  
-      = current_user.vote_count
-    
+  
   
   %p
     = f.submit "Submit"

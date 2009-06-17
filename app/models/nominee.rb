@@ -6,6 +6,10 @@ class Nominee < ActiveRecord::Base
                                          :normal => '196x196>' }
   validates_attachment_presence :image
 
+  def rank
+    self.votes_for.to_f/self.votes_count.to_f
+  end
+
 end
 
 

@@ -13,18 +13,33 @@
   %p
     %strong Content:
     = nominee.content
+    %p
+    %strong Rank:
+    = nominee.rank
+    %br
+    %strong Flames:
+    = nominee.votes_for
+    %br
+    %strong Lames:
+    = nominee.votes_against
+
+  %p
+    Vote:
+    - if current_user
+      - unless nominee.voted_by?(current_user)
+        = link_to "Flame", :controller => 'vote', :action => 'vote_up', :id => nominee
+        |
+        = link_to "Lame", :controller => 'vote', :action => 'vote_down', :id => nominee
+      - else
+        You have already voted for this Nominee
+    - else
+      You must be signed in to vote.    
   %p
     %strong Tags:
     - nominee.tag_counts_on(:tags).each do |tag|
       = link_to tag.name, root_path(:subdomain => tag)
-  %p
-    %strong Rank:
-    = nominee.votes_count
-    %strong For:
-    = nominee.votes_for
-    %strong Against:
-    = nominee.votes_against
-  %hr    
+      
+  %hr       
 
 %p
   = link_to "New Nominee", new_nominee_path
